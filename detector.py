@@ -33,6 +33,7 @@ def find_pupil(img, debug=True):
     #fit ellipse
     el = cv2.fitEllipse(pupil)
     
+    #((x, y), (a, b), angle)
     return el
     
     
