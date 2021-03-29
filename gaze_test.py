@@ -35,9 +35,11 @@ for dir in dirs:
 
     #calculate the distance
     #create and calibrate a GazeModel 
-    train_size = 15
+    train_size = 9
     #print(len(img))
     model = GazeModel(img[:train_size], pos[:train_size])
+
+
     cou = (len(img[train_size:]))
     #print(cou)
     
@@ -53,7 +55,7 @@ for dir in dirs:
         #for pupil
         #pupil ground truth values from .json
         pupil_ground_truth_vals = pupil_json_to_opencv(pupls[train_size+i])
-        #print(pupil_groud_truth_vals)
+        #print(pupil_ground_truth_vals)
         #pupil from detector.py
         pupil_detector = find_pupil(img[train_size+i])
         #coordinates

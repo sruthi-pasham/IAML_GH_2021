@@ -36,8 +36,8 @@ class GazeModel:
         self.Dy = Dy
         #fit the values to regression modesl
         #from pupil centers to the positions from .json file
-        self.lrx = LinearRegression().fit(self.Dx, [ x[0] for x in self.positions])
-        self.lry = LinearRegression().fit(self.Dy, [ x[1] for x in self.positions])
+        self.lrx = LinearRegression().fit(self.Dx, [ x[1] for x in self.positions])
+        self.lry = LinearRegression().fit(self.Dy, [ x[0] for x in self.positions])
 
     def estimate(self, image):
         # cv2.imshow('a', cv2.imread(image))
